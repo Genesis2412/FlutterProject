@@ -1,22 +1,14 @@
 import 'package:flutter/material.dart';
-//MaterialApp-acts ike a wrapper
-//Scaffold- can define many base layer
-//title- defines the title
-//centerTitle- align the title in the center
-//body- container for the body section
-//child- We always need child properties in a widget when putting a widget in another widget
-//stateless Widgets- the state of the widget cannot change over time
-//Stateful Widget- the state of the widget can change over time
 
 void main() 
 {
   runApp(MaterialApp(
-    home: Homes()
+    home: Home()
   ));
 }
 
 //help with hot reload enter st class
-class Homes extends StatelessWidget {
+class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,22 +17,14 @@ class Homes extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.tealAccent[400],
       ),
-      body: Center(
-        child: Text(
-          'Hello Folks!',
-          style: TextStyle(
-            fontSize: 30.0,
-            fontWeight: FontWeight.bold,
-            letterSpacing: 8.0,
-            color: Colors.teal[900],
-          ),
-          ),
-        ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {  },
-          child: Text('Click'),
-          backgroundColor: Colors.tealAccent[700],
-        ),
+      body:Container(
+        //padding: EdgeInsets.all(100.0),// inside container
+        //padding: EdgeInsets.symmetric(vertical: 100.0, horizontal: 50.0),
+        margin: EdgeInsets.all(100.0),// outside container
+        color: Colors.grey[400],
+        child: Text('Hello folks!'),
+      ) 
+        
     );
   }
 }
